@@ -56,6 +56,18 @@ public class GetFormatDate {
 	} 
 	return firstDate;  
     }
+    
+    /**
+     * 获取当前月最后一天的日期
+     * @cong.fu @2016-05-31
+     * @return 返回日期字符串类型
+     * */
+    public static String getMonthLastDate(){
+    	SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		Calendar c = Calendar.getInstance(); 
+		Date date = c.getTime();
+		return simpleDateFormat.format(date);
+    }
 }
 
 
