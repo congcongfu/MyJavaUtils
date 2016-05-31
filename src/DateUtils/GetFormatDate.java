@@ -68,6 +68,36 @@ public class GetFormatDate {
 		Date date = c.getTime();
 		return simpleDateFormat.format(date);
     }
+    
+    /**
+     * 获取去年同月第一天
+     * @cong.fu @2016-05-31
+     * @return 返回日期字符串
+     * */
+    public static String getLastYearMonthFirstDate(String yearMonth){
+    	SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+    	String[] yearAndMonth = yearMonth.split("-");
+    	int year = Integer.valueOf(yearAndMonth[0]) ;
+    	int month = Integer.valueOf(yearAndMonth[1]);
+    	Calendar calendar = Calendar.getInstance();
+    	calendar.set(year -1 , month-1, 1);
+    	return simpleDateFormat.format(calendar.getTime());
+    }
+    
+    /**
+     * 获取去年同月最后一天
+     * @cong.fu @2016-05-31
+     * @return 返回日期字符串
+     * */
+    public static String getLastYearMonthLastDate(String yearMonth){
+    	SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+    	String[] yearAndMonth = yearMonth.split("-");
+    	int year = Integer.valueOf(yearAndMonth[0]) ;
+    	int month = Integer.valueOf(yearAndMonth[1]);
+    	Calendar calendar = Calendar.getInstance();
+    	calendar.set(year -1 , month, 0);
+    	return simpleDateFormat.format(calendar.getTime());
+    }
 }
 
 
